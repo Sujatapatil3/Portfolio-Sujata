@@ -4,10 +4,6 @@ A premium, recruiter-focused portfolio built for a Java / Spring Boot backend de
 like documentation and API tooling rather than a generic design portfolio — every project is presented as a
 live API resource, with architecture diagrams and endpoint tables front and center.
 
-**Live design language:** deep slate surfaces, glassmorphism panels, a signal-teal accent (`#5EEAD4`), and
-JetBrains Mono typography throughout — built to evoke a terminal / API console, not a template.
-
----
 
 ## ✨ Features
 
@@ -81,71 +77,8 @@ npm run build     # production build to /dist
 npm run preview   # preview the production build locally
 ```
 
-### Before you deploy, do these three things
-
-1. **Add your real resume PDF** to `public/resume/Sujata_Patil_Resume.pdf` (see `src/data/profile.ts` →
-   `resumeFile` if you rename it).
-2. **Update placeholder links** in `src/data/profile.ts`:
-   - `github` and `linkedin` — currently placeholders (`github.com/sujatapatil`, etc.) since the resume
-     only listed a LinkedIn name, not a URL/handle.
-
 ---
 
-## 🌐 Deployment
-
-### Option A — Vercel (recommended, zero-config)
-
-1. Push this project to a GitHub repository.
-2. Go to [vercel.com/new](https://vercel.com/new) and import the repo.
-3. Vercel auto-detects Vite. Framework preset: **Vite**. Build command: `npm run build`. Output dir: `dist`.
-4. Before deploying, open `vite.config.ts` and set:
-   ```ts
-   base: '/'
-   ```
-   (Vercel serves from the domain root, unlike GitHub Pages project sites.)
-5. Click **Deploy**. Done — you get a `*.vercel.app` URL, with custom domain support in project settings.
-
-### Option B — GitHub Pages
-
-1. Push this project to a GitHub repository, e.g. `github.com/yourname/sujata-portfolio`.
-2. In `vite.config.ts`, confirm the `base` matches your repo name:
-   ```ts
-   base: '/sujata-portfolio/'
-   ```
-3. Install the deploy helper (already in `devDependencies`):
-   ```bash
-   npm install
-   ```
-4. Add a deploy script is already included — just run:
-   ```bash
-   npm run build
-   npx gh-pages -d dist
-   ```
-5. In your GitHub repo settings → **Pages**, set the source to the `gh-pages` branch.
-6. Your site will be live at `https://yourname.github.io/sujata-portfolio/`.
-
-> If you later attach a custom domain to GitHub Pages, switch `base` back to `'/'`.
-
----
-
-## 📋 Resume Improvement Suggestions (reflected in this portfolio)
-
-A few gaps were noticed while building this — worth fixing on the resume itself too:
-
-1. **No GitHub or LinkedIn URL listed** — only "LinkedIn-sujata patil" as text. Add clickable links; recruiters
-   click through far more than you'd expect. Placeholders are used here — replace them.
-2. **No LeetCode/CodeChef/competitive programming profile.** For Java backend roles, this is often screened
-   before the resume is even read closely. A modest, honestly-labeled profile beats no profile.
-3. **No live demo links for either project.** Consider deploying at least the To-Do List Manager (Spring
-   Boot + a free-tier host like Render or Railway) — a working link is worth more than any amount of resume
-   text.
-4. **"Objective" section reads generic.** This portfolio's About section replaces it with something more
-   specific to your actual project experience — consider mirroring that tone on the resume itself.
-5. **Certifications are course-completion certificates, not skill-tested credentials.** Worth supplementing
-   with something evaluative (e.g. Oracle Java certification, or a solid LeetCode/HackerRank score) before
-   applying broadly — it's a stronger signal to automated and human screens alike.
-
----
 
 ## 🛠 Tech Stack
 

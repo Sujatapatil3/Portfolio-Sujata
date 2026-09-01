@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Replace with your deployment URL
+Sitemap: https://sujatapatil.dev/sitemap.xml

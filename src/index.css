@@ -1,0 +1,134 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-border dark:border-border transition-colors duration-200;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-base text-ink font-sans antialiased;
+    background-image: radial-gradient(circle at 20% 0%, rgba(94, 234, 212, 0.06), transparent 45%),
+      radial-gradient(circle at 85% 15%, rgba(245, 166, 35, 0.04), transparent 40%);
+  }
+
+  body.light {
+    @apply bg-base-light text-ink-light;
+    background-image: radial-gradient(circle at 20% 0%, rgba(45, 212, 191, 0.06), transparent 45%),
+      radial-gradient(circle at 85% 15%, rgba(199, 125, 10, 0.04), transparent 40%);
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-mono tracking-tight;
+  }
+
+  /* Visible keyboard focus for accessibility — never suppressed */
+  :focus-visible {
+    outline: 2px solid #5eead4;
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  ::selection {
+    background: rgba(94, 234, 212, 0.25);
+    color: inherit;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  /* Glassmorphism panel — the base surface used across cards, nav, terminal windows */
+  .glass {
+    @apply backdrop-blur-xl bg-panel/60 dark:bg-panel/60 border border-border/80 dark:border-border/80;
+  }
+
+  .light .glass {
+    background-color: rgba(255, 255, 255, 0.7);
+    border-color: rgba(226, 232, 240, 0.9);
+  }
+
+  .glass-strong {
+    @apply backdrop-blur-2xl bg-panel/85 border border-border;
+  }
+
+  .light .glass-strong {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-color: #e2e8f0;
+  }
+
+  /* Eyebrow / kicker label styling used above section headings — mirrors HTTP status / log-level tags */
+  .kicker {
+    @apply inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.2em] text-signal;
+  }
+
+  .kicker::before {
+    content: '';
+    @apply w-1.5 h-1.5 rounded-full bg-signal;
+    box-shadow: 0 0 8px 2px rgba(94, 234, 212, 0.6);
+  }
+
+  .section-pad {
+    @apply px-6 sm:px-10 lg:px-20 py-24 sm:py-32;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-5 py-3 rounded-lg bg-signal text-base font-mono text-sm font-semibold
+    hover:bg-signal-dim active:scale-[0.98] transition-all shadow-glow;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 px-5 py-3 rounded-lg border border-border font-mono text-sm font-semibold
+    text-ink hover:border-signal hover:text-signal active:scale-[0.98] transition-all;
+  }
+
+  .light .btn-ghost {
+    @apply text-ink-light;
+  }
+
+  .tag-pill {
+    @apply px-3 py-1 rounded-full text-xs font-mono border border-border text-muted bg-panel/40;
+  }
+
+  .light .tag-pill {
+    @apply text-muted-light;
+  }
+
+  /* Terminal-style window chrome used for hero + project detail panels — the signature motif */
+  .term-dot {
+    @apply w-3 h-3 rounded-full;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #1e2833;
+    border-radius: 8px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #2dd4bf;
+  }
+}

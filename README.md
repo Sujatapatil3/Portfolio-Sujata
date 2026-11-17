@@ -7,7 +7,7 @@ live API resource, with architecture diagrams and endpoint tables front and cent
 
 ## ✨ Features
 
-- **Terminal-style boot loading screen** — sets the backend tone before the hero even renders
+- **Terminal-style boot loading screen** — sets the backend tone before the hero even renders.
 - **Typewriter hero** cycling through role titles (`Java Backend Developer`, `Spring Boot Engineer`, ...)
 - **Ambient network-diagram background** (canvas, respects `prefers-reduced-motion`)
 - **Glassmorphism UI** throughout — nav, cards, project panels
